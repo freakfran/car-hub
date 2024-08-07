@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {CarProps} from "@/types";
 import {Dialog, DialogPanel, Transition, TransitionChild} from "@headlessui/react";
 import Image from "next/image";
+import {generateCarImageUrl} from "@/util";
 
 
 interface CarDetailsProps {
@@ -54,21 +55,21 @@ function CarDetails({isOpen, closeModal, car}: CarDetailsProps) {
                                         bg-pattern bg-cover bg-center
                                         rounded-lg
                                         ">
-                                            <Image src="/hero.png" className="object-contain" alt="car model" fill
+                                            <Image src={generateCarImageUrl(car)} className="object-contain" alt="car model" fill
                                                    priority/>
                                         </div>
 
                                         <div className="flex gap-3">
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src="/hero.png" className="object-contain" alt="car model" fill
+                                                <Image src={generateCarImageUrl(car,'29')} className="object-contain" alt="car model" fill
                                                        priority/>
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src="/hero.png" className="object-contain" alt="car model" fill
+                                                <Image src={generateCarImageUrl(car,'33')} className="object-contain" alt="car model" fill
                                                        priority/>
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src="/hero.png" className="object-contain" alt="car model" fill
+                                                <Image src={generateCarImageUrl(car,'13')} className="object-contain" alt="car model" fill
                                                        priority/>
                                             </div>
                                         </div>

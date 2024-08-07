@@ -1,6 +1,6 @@
 'use client'
 import {CarProps} from "@/types";
-import {calculateCarRent} from "@/util";
+import {calculateCarRent, generateCarImageUrl} from "@/util";
 import Image from "next/image";
 import {CarDetails, CustomButton} from "@/components/index";
 import {useState} from "react";
@@ -30,7 +30,7 @@ function CarCard({car}: CarCardProps) {
             </p>
 
             <div className="w-full relative h-40 my-3 object-contain">
-                <Image src="/hero.png" className="object-contain" alt="car model" fill priority />
+                <Image src={generateCarImageUrl(car)} className="object-contain" alt="car model" fill priority />
             </div>
 
             <div className="w-full flex relative mt-2">
